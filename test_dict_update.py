@@ -15,6 +15,8 @@ def bb():
 
 print 'aa i[key]'
 print timeit(aa)
+# 1.03357291222
 
 print 'bb i.update'
 print timeit(bb)
+# 1.62549996376
