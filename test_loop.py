@@ -19,12 +19,16 @@ def cc():
 
 print 'aa'
 print timeit(aa)
+# 2.43927001953
 
 print 'aaa'
 print timeit(aaa)
+# 2.25370001793
 
 print 'bb'
 print timeit(bb)
+# 2.3753888607
 
 print 'cc'
 print timeit(cc)
+# 0.780359983444
