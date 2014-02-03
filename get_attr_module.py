@@ -27,6 +27,8 @@ def bb():
 
 print 'aa'
 print timeit(aa)
+# 1.06746196747
 
 print 'bb'
 print timeit(bb)
+# 0.781857013702
