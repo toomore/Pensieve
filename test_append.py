@@ -37,19 +37,25 @@ def dd():
 print 'aa'
 ta = timeit(aa)
 print ta
+# 2.60321593285
 
 print 'bb'
 tb = timeit(bb)
 print tb
+# 2.2162270546
 
 print ta / tb - 1
+# 0.174616078911
 
 print 'cc'
 tc = timeit(cc)
 print tc
+# 1.51776909828
 
 print 'dd'
 td = timeit(dd)
 print td
+# 1.71133208275
 
 print tc / td - 1
+# -0.113106618182
