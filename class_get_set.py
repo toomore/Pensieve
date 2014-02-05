@@ -7,7 +7,15 @@ class aaa(object):
 
     def __new__(self, feed):
         print 'in new.'
+        return 'r in new.'
 
+    def __repr__(self):
+        return 'r repr'
+
+    def __nonzero__(self):
+        #print 'in __nonzero__'
+        return False
 
 if __name__ == '__main__':
     a = aaa(123)
+    print a
