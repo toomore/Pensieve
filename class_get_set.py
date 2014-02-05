@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# http://docs.python.org/2/reference/datamodel.html
+# TODO: implement it.
 
 class aaa(object):
     def __init__(self, feed):
