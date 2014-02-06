@@ -1,16 +1,35 @@
 # -*- coding: utf-8 -*-
 from timeit import timeit
-import requests
+from datetime import datetime
+
+class o(object):
+    def __init__(self):
+        pass
+
+    def get_time(self):
+        return datetime.now()
+
+    @staticmethod
+    def get_timei_b():
+        return datetime.now()
+
+class oo(object):
+    @staticmethod
+    def get_time():
+        return datetime.now()
 
 def aa():
-    r = requests.post
-    str(r)
+    o().get_time()
 
-rr = requests
 def bb():
-    str(rr.post)
+    oo.get_time()
+
+def cc():
+    o.get_timei_b()
 
 print timeit(aa)
-# 0.956517934799
+# 2.22908782959
 print timeit(bb)
-# 0.951417922974
+# 1.61138892174
+print timeit(cc)
+# 1.58323502541
