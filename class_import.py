@@ -11,4 +11,6 @@ def bb():
     str(rr.post)
 
 print timeit(aa)
+# 0.956517934799
 print timeit(bb)
+# 0.951417922974
