@@ -3,11 +3,12 @@ from timeit import timeit
 import requests
 
 def aa():
-    r = requests
+    r = requests.post
+    str(r)
 
 rr = requests
 def bb():
-    rr
+    str(rr.post)
 
 print timeit(aa)
 print timeit(bb)
