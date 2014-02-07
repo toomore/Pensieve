@@ -17,7 +17,7 @@ class aaa(object):
     '''
 
     def __repr__(self):
-        return 'r repr'
+        return "<aaa type: 'object'>"
 
     def __nonzero__(self):
         return False
@@ -27,7 +27,14 @@ class aaa(object):
         print self.feed, other.feed
         return cmp(self.feed, other.feed)
 
-    '''
+    def __lt__(self, other):
+        print 'in lt', other
+        return self.feed < other.feed
+
+    def __le__(self, other):
+        print 'in le', other
+        return self.feed <= other.feed
+
     def __eq__(self, other):
         print 'in eq', other
         return self.feed == other.feed
@@ -36,15 +43,18 @@ class aaa(object):
         print 'in ne', other
         return not self.feed == other.feed
 
-    def __lt__(self, other):
-        print 'in lt', other
-        return self.feed < other.feed
-    '''
+    def __gt__(self, other):
+        print 'in gt', other
+        return self.feed > other.feed
 
-    def __hash__(self):
-        ''' must define __cmp__() '''
-        print 'in hash'
-        return None
+    def __ge__(self, other):
+        print 'in ge', other
+        return self.feed >= other.feed
+
+    #def __hash__(self):
+    #    ''' must define __cmp__() '''
+    #    print 'in hash'
+    #    return None
 
 if __name__ == '__main__':
     a = aaa(123)
@@ -52,4 +62,5 @@ if __name__ == '__main__':
     print a
     print 'bool:', bool(a)
     print a, id(a), b, id(b)
-    print 'cmp:', a > b
+    print 'cmp:', a >= b
+    help(a)
