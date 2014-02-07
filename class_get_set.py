@@ -5,14 +5,16 @@
 class base(object):
     pass
 
-class aaa(base):
+class aaa(object):
     def __init__(self, feed):
         self.feed = feed
         print 'in init.'
 
+    '''
     def __new__(self, feed):
         print 'in new.'
         return 'r in new.'
+    '''
 
     def __repr__(self):
         return 'r repr'
@@ -22,15 +24,22 @@ class aaa(base):
 
     def __cmp__(self, other):
         print 'in cmp', other
-        return 1
+        print self.feed, other.feed
+        return cmp(self.feed, other.feed)
 
+    '''
     def __eq__(self, other):
         print 'in eq', other
-        return 0
+        return self.feed == other.feed
 
     def __ne__(self, other):
         print 'in ne', other
-        return 0
+        return not self.feed == other.feed
+
+    def __lt__(self, other):
+        print 'in lt', other
+        return self.feed < other.feed
+    '''
 
     def __hash__(self):
         ''' must define __cmp__() '''
@@ -39,7 +48,8 @@ class aaa(base):
 
 if __name__ == '__main__':
     a = aaa(123)
-    b = aaa(333)
+    b = aaa(323)
     print a
     print 'bool:', bool(a)
-    print 'cmp:', cmp(a, b)
+    print a, id(a), b, id(b)
+    print 'cmp:', a > b
