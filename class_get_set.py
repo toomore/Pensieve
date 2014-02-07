@@ -2,7 +2,10 @@
 # http://docs.python.org/2/reference/datamodel.html
 # TODO: implement it.
 
-class aaa(object):
+class base(object):
+    pass
+
+class aaa(base):
     def __init__(self, feed):
         self.feed = feed
         print 'in init.'
@@ -15,9 +18,28 @@ class aaa(object):
         return 'r repr'
 
     def __nonzero__(self):
-        #print 'in __nonzero__'
         return False
+
+    def __cmp__(self, other):
+        print 'in cmp', other
+        return 1
+
+    def __eq__(self, other):
+        print 'in eq', other
+        return 0
+
+    def __ne__(self, other):
+        print 'in ne', other
+        return 0
+
+    def __hash__(self):
+        ''' must define __cmp__() '''
+        print 'in hash'
+        return None
 
 if __name__ == '__main__':
     a = aaa(123)
+    b = aaa(333)
     print a
+    print 'bool:', bool(a)
+    print 'cmp:', cmp(a, b)
