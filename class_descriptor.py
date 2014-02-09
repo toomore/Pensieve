@@ -37,4 +37,6 @@ def test2():
 
 if __name__ == '__main__':
     print timeit(test1)
+    # 0.768654823303
     print timeit(test2)
+    # 0.74841594696
