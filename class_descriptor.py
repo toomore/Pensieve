@@ -4,20 +4,25 @@
 
 
 class aaa(object):
-    def __init__(self):
+    def __init__(self, initval=0, name=''):
         print 'in init'
-        self._x = 0
+        self.value = initval
+        self.name = name
 
-    def __get__(self):
-        return self._x
+    def __get__(self, obj, objtype):
+        print 'in get', self.name, obj, objtype, obj.y
+        return self.value
 
-    def __set__(self, value):
-        self._x = value
+    def __set__(self, obj, value):
+        print 'in set', self.name
+        self.value = value
 
-    x = property(__get__, __set__)
+class bbb(object):
+    x = aaa(10, 'x')
+    y = 'abc'
 
 if __name__ == '__main__':
-    a = aaa()
-    print a.x
-    a.x = 123
-    print a.x
+    b = bbb()
+    print b.x
+    b.x = 12
+    print b.x
