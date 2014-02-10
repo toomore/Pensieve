@@ -19,3 +19,4 @@ except AttributeError as e:
 
 people = people._replace(name='TOOMORE')
 print people.name
+print people._fields
