@@ -16,3 +16,6 @@ try:
     print people.skill
 except AttributeError as e:
     print e
+
+people = people._replace(name='TOOMORE')
+print people.name
