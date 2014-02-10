@@ -3,6 +3,7 @@
 # https://github.com/kennethreitz/requests/blob/a5b3719967e685afe9e96359e69177fda0a10d44/requests/packages/urllib3/util.py#L269
 from collections import namedtuple
 
+
 People = namedtuple('People', ['name', 'age'])
 
 people = People('toomore', 23)
@@ -20,3 +21,4 @@ except AttributeError as e:
 people = people._replace(name='TOOMORE')
 print people.name
 print people._fields
+print people._asdict()
