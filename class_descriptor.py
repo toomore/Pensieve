@@ -36,7 +36,17 @@ def test2():
     b.x = 12
 
 if __name__ == '__main__':
-    print timeit(test1)
+    # ----- Test slots ----- #
+    #print timeit(test1)
     # 0.768654823303
-    print timeit(test2)
+    #print timeit(test2)
     # 0.74841594696
+
+    # ----- Test assign new variable not listed in __slots__ ----- #
+    c = ccc()
+    print c.x, c.y
+    try:
+        c.z = 100
+        print c.z
+    except AttributeError as e:
+        print e
