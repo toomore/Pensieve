@@ -22,3 +22,8 @@ people = people._replace(name='TOOMORE')
 print people.name
 print people._fields
 print people._asdict()
+
+# ----- Setting default people ----- #
+default_people = People('<No body>', 18)
+me_people = default_people._replace(name='me')
+print me_people
