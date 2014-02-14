@@ -16,6 +16,10 @@ def cc():
     a = (i for i in xrange(10))
     #a = set(a) # 1.60462594032
 
+def dd():
+    ''' dict'''
+    a = {i:i for i in xrange(10)}
+
 if __name__ == '__main__':
    print timeit(aa)
    # 1.09882903099
@@ -23,3 +27,4 @@ if __name__ == '__main__':
    # 1.67259907722
    print timeit(cc)
    # 1.00920009613
+   print timeit(dd)
