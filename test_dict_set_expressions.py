@@ -28,3 +28,4 @@ if __name__ == '__main__':
    print timeit(cc)
    # 1.00920009613
    print timeit(dd)
+   # 1.79345297813
