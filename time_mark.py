@@ -22,3 +22,4 @@ if __name__ == '__main__':
         [i for i in xrange(10)]
 
     print timemark(aa)
+    print timemark(aa)
