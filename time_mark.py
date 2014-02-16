@@ -10,7 +10,8 @@ class timemark(object):
         self.time = self._time()
 
     def __repr__(self):
-        return '%s %s(%s)' % (self.time, self.target, self._type)
+        return '%s %s(%s)' % (self.time, self.target.__name__,
+                              self._type.__name__)
 
     def _time(self):
         return timeit(self.target)
