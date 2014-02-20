@@ -2,7 +2,7 @@
 from timeit import timeit
 
 
-class timemark(object):
+class Timemark(object):
 
     def __init__(self, target, number=None):
         self.target = target
@@ -21,5 +21,5 @@ if __name__ == '__main__':
     def aa():
         [i for i in xrange(10)]
 
-    print timemark(aa)
-    print timemark(aa)
+    print Timemark(aa)
+    print Timemark(aa)
