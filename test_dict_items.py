@@ -18,8 +18,14 @@ def cc():
 
 if __name__ == '__main__':
     print Timemark(aa)
+    # 1.63503289223
+
     print Timemark(bb)
+    # 2.37659788132
+
     print Timemark(cc)
+    # 1.85569500923
+
     print timeit(aa)
     print timeit(bb)
     print timeit(cc)
