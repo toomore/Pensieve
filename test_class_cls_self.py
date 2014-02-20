@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from timeit import timeit
 
-class aa(object):
+class oaa(object):
     def a(self):
         return 1
 
@@ -11,7 +11,7 @@ class aa(object):
     def c(self):
         c = self.a() + self.b()
 
-class bb(object):
+class obb(object):
     @classmethod
     def a(cls):
         return 1
@@ -24,7 +24,13 @@ class bb(object):
     def c(cls):
         c = cls.a() + cls.b()
 
+def aa():
+    result = oaa().c()
+
+def bb():
+    result = obb.c()
+
 if __name__ == '__main__':
-    print aa().c() == bb.c()
-    print timeit(aa().c)
-    print timeit(bb.c)
+    print oaa().c() == obb.c()
+    print timeit(aa)
+    print timeit(bb)
