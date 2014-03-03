@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# http://stackoverflow.com/questions/7057019/python-dynamic-inheritance-how-to-choose-base-class-upon-instance-creation
 import requests
 
 class aa(object):
