@@ -13,4 +13,6 @@ print aa() == bb()
 
 if __name__ == '__main__':
     print timeit(aa)
+    # 0.49315905571
     print timeit(bb)
+    # 7.44000315666
