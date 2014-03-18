@@ -14,6 +14,6 @@ def bb():
 
 if __name__ == '__main__':
     print timeit(aa), len(AA_SAMPLE)
-    # 2.0291929245
+    # 0.372648954391
     print timeit(bb), len(BB_SAMPLE)
-    # 0.714349985123
+    # 0.743675947189
