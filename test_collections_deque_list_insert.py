@@ -2,11 +2,10 @@
 from timeit import timeit
 from collections import deque
 
-AA_SAMPLE = range(100)
+AA_SAMPLE = deque(range(100))
 def aa():
-    d = deque(AA_SAMPLE)
-    get_one = d.pop()
-    d.appendleft(get_one)
+    get_one = AA_SAMPLE.pop()
+    AA_SAMPLE.appendleft(get_one)
 
 BB_SAMPLE = range(100)
 def bb():
