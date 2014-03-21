@@ -4,5 +4,8 @@ import itertools
 a = itertools.islice('ABCDE', 2)
 print list(a)
 
-a = itertools.izip_longest('ABCDE','ABC', fillvalue='x')
+# groups
+sample = [iter('ABCDE')] * 3
+a = itertools.izip_longest(*sample, fillvalue='x')
 print list(a)
+# ABC, DEx
