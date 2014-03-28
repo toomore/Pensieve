@@ -19,6 +19,10 @@ def dd():
 if __name__ == '__main__':
     if aa() == bb() == cc() == dd():
         print timeit(aa)
+        # 1.81831908226
         print timeit(bb)
+        # 1.824873209
         print timeit(cc)
+        # 1.77703213692
         print timeit(dd)
+        # 1.86144685745
