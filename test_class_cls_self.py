@@ -33,4 +33,6 @@ def bb():
 if __name__ == '__main__':
     print oaa().c() == obb.c()
     print timeit(aa)
+    # 0.80507516861
     print timeit(bb)
+    # 0.670232057571
