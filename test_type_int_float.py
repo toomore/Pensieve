@@ -2,9 +2,12 @@
 from timeit import timeit
 
 
+def replace_comm(strings):
+    return strings.replace(',', '') if ',' in strings else strings
+
 def covstr(strings):
     """ convert string to int or float. """
-    strings = strings.replace(',', '') if ',' in strings else strings
+    strings = replace_comm(strings)
     try:
         result = int(strings)
     except ValueError:
@@ -12,7 +15,7 @@ def covstr(strings):
     return result
 
 def aa(strings):
-    strings = strings.replace(',', '') if ',' in strings else strings
+    strings = replace_comm(strings)
     return float(strings) if '.' in strings else int(strings)
 
 def CC_A():
