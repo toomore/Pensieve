@@ -4,6 +4,7 @@ from timeit import timeit
 
 def covstr(strings):
     """ convert string to int or float. """
+    strings = strings.replace(',', '') if ',' in strings else strings
     try:
         result = int(strings)
     except ValueError:
@@ -11,6 +12,7 @@ def covstr(strings):
     return result
 
 def aa(strings):
+    strings = strings.replace(',', '') if ',' in strings else strings
     return float(strings) if '.' in strings else int(strings)
 
 def CC_A():
