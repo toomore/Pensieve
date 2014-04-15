@@ -29,6 +29,10 @@ def DD_B():
 
 if __name__ == '__main__':
     print timeit(CC_A)
+    # 1.1373090744
     print timeit(CC_B)
+    # 4.28914999962
     print timeit(DD_A)
+    # 1.16217088699
     print timeit(DD_B)
+    # 0.669591903687
