@@ -18,5 +18,8 @@ def cc():
 
 if __name__ == '__main__':
     print timeit(aa)
+    # 0.411198854446
     print timeit(bb)
+    # 0.406551122665
     print timeit(cc)
+    # 0.496109008789
