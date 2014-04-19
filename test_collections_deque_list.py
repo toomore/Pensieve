@@ -18,6 +18,7 @@ def cc():
     CC_SAMPLE.rotate(1)
 
 if __name__ == '__main__':
+    # TODO
     print timeit(aa), len(AA_SAMPLE)
     #
     print timeit(cc), len(CC_SAMPLE)
