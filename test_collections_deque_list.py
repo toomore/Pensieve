@@ -4,9 +4,9 @@ from collections import deque
 
 n = 100
 
-POINT = 0
 AA_SAMPLE = range(n)
 def aa():
+    POINT = 0
     AA_SAMPLE[POINT]
     POINT += 1
     if POINT > n:
