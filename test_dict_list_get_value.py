@@ -12,4 +12,6 @@ def bb():
 
 if __name__ == '__main__':
     print timeit(aa)
+    # 0.195688962936
     print timeit(bb)
+    # 0.19148015976
