@@ -1,2 +1,3 @@
-requests
 numpy
+requests
+urllib3
