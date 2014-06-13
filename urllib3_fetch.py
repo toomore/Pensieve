@@ -2,7 +2,7 @@
 import urllib3
 
 
-class Urlfetch(object):
+class UrlFetch(object):
     def __init__(self, base_url):
         self.conn = urllib3.connection_from_url(base_url)
 
@@ -16,6 +16,6 @@ class Urlfetch(object):
         return self.conn.request(method, path, fields=fields, headers=headers)
 
 if __name__ == '__main__':
-    conn = Urlfetch('http://httpbin.org/')
+    conn = UrlFetch('http://httpbin.org/')
     print conn.get('/get', {'name': 'Toomore'}).data
     print conn.post('/post', {'name': 'Toomore'}).data
