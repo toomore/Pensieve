@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import ujson as json
 import urllib3
 
 
 class UrlFetch(object):
-    def __init__(self, base_url):
+    def __init__(self, base_url, is_json=False):
         self.conn = urllib3.connection_from_url(base_url)
 
     def get(self, path, params=None, headers=None):
@@ -18,4 +19,5 @@ class UrlFetch(object):
 if __name__ == '__main__':
     conn = UrlFetch('http://httpbin.org/')
     print conn.get('/get', {'name': 'Toomore'}).data
-    print conn.post('/post', {'name': 'Toomore'}).data
+    result = conn.post('/post', {'name': 'Toomore'})
+    print result.data
