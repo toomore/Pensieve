@@ -17,3 +17,6 @@ for i in sorted_list:
     print i
 
 print order_dict['book']
+order_dict.update(zoo=0)
+print order_dict
+print list(order_dict)
