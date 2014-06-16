@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import ujson as json
 import urllib3
+from urllib3.util import get_host
 
 
 ##class UrlFetch(object):
@@ -23,12 +24,13 @@ import urllib3
 ##    print result.data
 
 class UrlFetch(urllib3.HTTPConnectionPool):
-    def __init__(self, host):
+    def __init__(self, url):
+        scheme, host, port = get_host(url)
         super(UrlFetch, self).__init__(host)
 
     def get(self, path, params=None, headers=None):
         return self.request('GET', path, fields=params, headers=headers)
 
 if __name__ == '__main__':
-    conn = UrlFetch('httpbin.org')
+    conn = UrlFetch('http://httpbin.org/')
     print conn.get('/get', {'name': 'Toomore'}).data
