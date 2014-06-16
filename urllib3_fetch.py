@@ -26,7 +26,7 @@ from urllib3.util import get_host
 class UrlFetch(urllib3.HTTPConnectionPool):
     def __init__(self, url):
         scheme, host, port = get_host(url)
-        super(UrlFetch, self).__init__(host)
+        super(UrlFetch, self).__init__(host, port=port)
 
     def get(self, path, params=None, headers=None):
         return self.request('GET', path, fields=params, headers=headers)
