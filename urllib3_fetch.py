@@ -22,9 +22,13 @@ import urllib3
 ##    result = conn.post('/post', {'name': 'Toomore'})
 ##    print result.data
 
-class UrlFetch(urllib3):
-    pass
+class UrlFetch(urllib3.HTTPConnectionPool):
+    def __init__(self, host):
+        super(UrlFetch, self).__init__(host)
 
+    def get(self, path, params=None, headers=None):
+        return self.request('GET', path, fields=params, headers=headers)
 
 if __name__ == '__main__':
-    conn = UrlFetch()
+    conn = UrlFetch('httpbin.org')
+    print conn.get('/get', {'name': 'Toomore'}).data
