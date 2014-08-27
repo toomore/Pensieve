@@ -15,4 +15,5 @@ for i in result:
 print cur, dir(cur)
 columns = [i[0] for i in cur.description]
 print columns
+print cur.description_flags
 cur.close()
