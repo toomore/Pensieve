@@ -5,7 +5,7 @@ import setting
 
 conn = MySQLdb.connect('localhost', setting.DBUSER, setting.DBPASS, setting.DBS)
 cur = conn.cursor()
-cur.execute('select * from pootlecache26 order by expires desc limit 10')
+cur.execute("""select * from %s""" % setting.TESTTABLE)
 
 result = cur.fetchall()
 
