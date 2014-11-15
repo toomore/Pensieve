@@ -26,6 +26,9 @@ class MariaDB(object):
     def get_cur(self):
         return self.cur
 
+    def get_rowcount(self):
+        return self.cur.rowcount
+
     def __exit__(self, type, value, traceback):
         print type, value, traceback
         self.cur.close()
@@ -44,7 +47,7 @@ for i in result:
     print i
 
 print userdata.get_columns()
-print 'get cur:', userdata.get_cur().rowcount
+print 'get cur:', userdata.get_rowcount()
 
 #print '>>> print cur', cur, dir(cur)
 #columns = [i[0] for i in cur.description]
