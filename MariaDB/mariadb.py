@@ -16,8 +16,8 @@ class MariaDB(object):
         print 'ENTERRR'
         return self
 
-    def sql(self, sql):
-        self.cur.execute(sql)
+    def sql(self, sql, params=None):
+        self.cur.execute(sql, params)
         return self.cur.fetchall()
 
     def get_columns(self):
