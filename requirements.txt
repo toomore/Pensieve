@@ -1,4 +1,5 @@
 MySQL-python
+couchdb
 numpy
 requests
 ujson
