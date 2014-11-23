@@ -5,10 +5,13 @@ COUCHDB = couchdb.Server()
 
 class CouchDBBase(dict):
 
-    def __init__(self, db_name, _id):
+    def __init__(self, db_name, _id, prepare_date=True):
         self.db_name = db_name
         self._id = _id
         self.db = COUCHDB[db_name]
+
+        if prepare_date:
+            self.get_data()
 
     def get_data(self):
         self.update(self.db.get(self._id, {}))
@@ -27,8 +30,7 @@ class Test(CouchDBBase):
 
 
 if __name__ == '__main__':
-    test = Test('opppp')
-    test.get_data()
+    test = Test('oppp')
     print 'test: ', test
     #test['name'] = 'toomore2'
     #test.save()
