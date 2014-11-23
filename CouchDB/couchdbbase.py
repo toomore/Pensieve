@@ -8,11 +8,15 @@ class CouchDBBase(dict):
     def __init__(self, db_name, _id):
         self.db_name = db_name
         self._id = _id
+        self.db = COUCHDB[db_name]
+
+    def get_data(self):
+        self.update(self.db.get(self._id, {}))
 
     def save(self):
-        data = COUCHDB[self.db_name].get(self._id, {'_id': self._id})
+        data = self.db.get(self._id, {'_id': self._id})
         data.update(self)
-        COUCHDB[self.db_name].save(data)
+        self.db.save(data)
 
 
 class Test(CouchDBBase):
@@ -23,6 +27,8 @@ class Test(CouchDBBase):
 
 
 if __name__ == '__main__':
-    test = Test('oppp')
-    test['name'] = 'toomore2'
-    test.save()
+    test = Test('opppp')
+    test.get_data()
+    print 'test: ', test
+    #test['name'] = 'toomore2'
+    #test.save()
